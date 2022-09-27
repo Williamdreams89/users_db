@@ -31,6 +31,7 @@ class StudentManager(BaseUserManager):
         
         results = super().get_queryset(*args,**kwargs)
         student_model = results.filter(role = User.RoleChoices.STUDENT)
+        return student_model
     
 
 class Student(User):
