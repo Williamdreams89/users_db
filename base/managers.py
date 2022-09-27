@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(email, name, department, role)
         user.is_staff = True
         user.is_active = True
-        user.superuser = True
+        user.is_superuser = True
         user.set_password(password)
 
         user.save(using=self._db)
