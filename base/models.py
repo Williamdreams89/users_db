@@ -26,17 +26,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ["name", "department", "role"]
 
 
-# class StudentManager(BaseUserManager):
-#     def get_queryset(self, *args, **kwargs):
+class StudentManager(BaseUserManager):
+    def get_queryset(self, *args, **kwargs):
         
-#         results = super().get_queryset(*args,**kwargs)
-#         student_model = results.filter(role = User.RoleChoices.STUDENT)
+        results = super().get_queryset(*args,**kwargs)
+        student_model = results.filter(role = User.RoleChoices.STUDENT)
     
 
 class Student(User):
     base_role = User.RoleChoices.STUDENT
 
-    # students = StudentManager()
+    students = StudentManager()
 
     class Meta:
         abstract = True
