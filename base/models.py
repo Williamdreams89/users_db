@@ -40,4 +40,4 @@ class Student(User):
     students = StudentManager()
 
     class Meta:
-        abstract = True
+        proxy = True

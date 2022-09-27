@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from base.models import User
+from base.models import Student, User
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['name', "email", "department", "role"]
@@ -8,5 +8,7 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(User, UserAdmin)
 
 
-class StudentManager(admin.ModelAdmin):
+class StudentAdmin(admin.ModelAdmin):
     list_display  = ["name", "email", ]
+
+admin.site.register(Student, StudentAdmin)
