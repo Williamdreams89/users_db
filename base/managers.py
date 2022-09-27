@@ -1,3 +1,4 @@
+
 from django.contrib.auth.models import BaseUserManager
 
 class UserManager(BaseUserManager):
@@ -13,5 +14,3 @@ class UserManager(BaseUserManager):
 
         return user 
 
-
-        
